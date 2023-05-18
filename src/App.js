@@ -30,7 +30,6 @@ export default function App() {
 
   return (
     <div className="App">
-      {/* <Form movieSearch={getMovie} /> */}
       <Header getMovie={getMovie}/>
       <div>{errorMessage ? `Error:${errorMessage}` : ""}</div>
       <MovieDisplay movie={movie} />
