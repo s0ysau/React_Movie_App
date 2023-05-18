@@ -6,17 +6,19 @@ export default function MovieDisplay({movie}) {
     <>
       {movie && movie.Title ? (
         <>
-          <div className='flex justify-center mt-10 items-center'>
-            <h2 className="text-3xl font-bold underline">{movie.Title}</h2>
+          <div className=' mt-10 items-center'>
+            <h2 className="text-3xl font-bold">{movie.Title}</h2>
             <p>{movie.Year}</p>
             <p>{movie.Rated}</p>
             <p>{movie.Runtime}</p>
-            <img src={movie.Poster} alt={movie.Title} />
-            <p>{movie.Genre}</p>
-            <p>{movie.Plot}</p>
-            <h3>Director {movie.Director}</h3>
-            <h3>Writer {movie.Writer}</h3>
-            <h3>Stars {movie.Actors}</h3>
+            <section className="">
+            <img src={movie.Poster} alt={movie.Title} className="justify-center "/>
+              <p className="order-1">{movie.Genre}</p>
+              <p className="order-2">{movie.Plot}</p>
+              <h3 className="order-3"><span className="font-bold">Director</span> {movie.Director}</h3>
+              <h3 className="order-4"><span className="font-bold">Writer</span> {movie.Writer}</h3>
+              <h3 className="order-5"><span className="font-bold">Stars</span> {movie.Actors}</h3>
+            </section>
           </div>
           {/* <div>
             {

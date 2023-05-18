@@ -22,9 +22,9 @@ export default function App() {
     }
   };
 
-  // useEffect(() => {
-  //   getMovie("Clueless");
-  // }, []);
+  useEffect(() => {
+    getMovie("Avengers");
+  }, []);
 
   console.log(movie)
 

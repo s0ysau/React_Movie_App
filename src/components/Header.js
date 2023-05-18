@@ -1,13 +1,17 @@
 import React from "react";
 import Form from "./Form";
+import Logo from "./Logo";
 
 
 export default function Header ({getMovie}) {
   return (
-    <React.Fragment>
+    <section className=" bg-black">
+      <Logo/>
       <Form movieSearch={getMovie} />
-      <p>Sign In</p>
-      <p>Log In</p>
-    </React.Fragment>
+      <section className="">
+        <p className="text-white">Sign In</p>
+        <p className="text-white">Log In</p>
+      </section>
+    </section>
   )
 }

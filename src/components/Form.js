@@ -16,9 +16,10 @@ export default function Form(props) {
           evt.preventDefault();
           props.movieSearch(searchTerm);
         }}
+        className="pl-5"
       >
-        <input type="text" onChange={handleChange} value={searchTerm} />
-        <input type="submit" value="submit" className='bg-red-300 p-2 rounded mx-20 hover:bg-red-600 hover:text-white'/>
+        <input type="text" onChange={handleChange} value={searchTerm} placeholder="Search MovieApp"/>
+        <input type="submit" value="submit" className='bg-red-300 p-1 rounded mx-3 hover:bg-red-600 hover:text-white'/>
       </form>
     </div>
   );
