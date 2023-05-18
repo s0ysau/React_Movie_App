@@ -5,7 +5,7 @@ import Logo from "./Logo";
 
 export default function Header ({getMovie}) {
   return (
-    <div>
+    <section>
       <section className="flex p-2 bg-black">
         <Logo/>
         <Form movieSearch={getMovie} />
@@ -14,6 +14,6 @@ export default function Header ({getMovie}) {
           <p className="text-white">Log In</p>
         </section> */}
       </section>
-    </div>
+    </section>
   )
 }

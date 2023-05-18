@@ -16,13 +16,13 @@ export default function MovieDisplay({movie}) {
               <p>{movie.Runtime}</p>
             </section>
             <section className="flex">
-            <img src={movie.Poster} alt={movie.Title} className="p-5"/>
+            <img src={movie.Poster} alt={movie.Title} className="basis-5 p-5"/>
               <section className="flex flex-col items-start pr-5 rounded-lg ">
                 <p className="order-1 pt-5">{movie.Genre}</p>
                 <p className="order-2 text-left py-5">{movie.Plot}</p> 
                 <h3 className="order-3"><span className="font-bold">Director</span> {movie.Director}</h3>
                 <h3 className="order-4"><span className="font-bold">Writer</span> {movie.Writer}</h3>
-                <h3 className="order-5"><span className="font-bold">Stars</span> {movie.Actors}</h3>
+                <h3 className="order-5 text-left"><span className="font-bold">Stars</span> {movie.Actors}</h3>
               </section>
             </section>
           </div>
