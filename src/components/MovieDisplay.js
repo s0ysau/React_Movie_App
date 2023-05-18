@@ -1,13 +1,13 @@
 // Define a function that is our component, always make sure to declare the props parameter so you can use props in your component
-export default function MovieDisplay(props) {
+export default function MovieDisplay({movie}) {
   //The component must return some JSX
   return (
     <>
-      {props.movie && props.movie.Title ? (
+      {movie && movie.Title ? (
         <div>
-          <h2>{props.movie.Title}</h2>
-          <img src={props.movie.Poster} alt={props.movie.Title} />
-          <p>Box Office = {props.movie.BoxOffice}</p>
+          <h2>{movie.Title}</h2>
+          <img src={movie.Poster} alt={movie.Title} />
+          <p>Box Office = {movie.BoxOffice}</p>
         </div>
       ) : (
         <h1>No Movie to display</h1>

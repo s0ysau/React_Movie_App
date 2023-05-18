@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import "./styles.css";
-// WE IMPORT OUR COMPONENTS
 import MovieDisplay from "./components/MovieDisplay";
 import Form from "./components/Form";
+import Header from "./components/Header";
 
 export default function App() {
   const apiKey = "cbc3f5a1";
@@ -22,9 +22,16 @@ export default function App() {
     }
   };
 
+  // useEffect(() => {
+  //   getMovie("Clueless");
+  // }, []);
+
+  console.log(movie)
+
   return (
     <div className="App">
-      <Form movieSearch={getMovie} />
+      {/* <Form movieSearch={getMovie} /> */}
+      <Header getMovie={getMovie}/>
       <div>{errorMessage ? `Error:${errorMessage}` : ""}</div>
       <MovieDisplay movie={movie} />
     </div>
