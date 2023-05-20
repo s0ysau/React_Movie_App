@@ -3,6 +3,7 @@ import "./styles.css";
 import MovieDisplay from "./components/MovieDisplay";
 import Form from "./components/Form";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function App() {
   const apiKey = "cbc3f5a1";
@@ -25,14 +26,14 @@ export default function App() {
   useEffect(() => {
     getMovie("Avengers");
   }, []);
-
-  console.log(movie)
+  
 
   return (
     <div className="App">
       <Header getMovie={getMovie}/>
       <div>{errorMessage ? `Error:${errorMessage}` : ""}</div>
       <MovieDisplay movie={movie} />
+      <Footer />
     </div>
   );
 }
