@@ -1,4 +1,4 @@
-import BreakLine from "./Breakline";
+// import BreakLine from "./Breakline";
 
 // Define a function that is our component, always make sure to declare the props parameter so you can use props in your component
 export default function MovieDisplay({movie}) {
@@ -45,7 +45,9 @@ export default function MovieDisplay({movie}) {
           </div> */}
         </>
       ) : (
-        <h1>No Movie to display</h1>
+        <section className="flex justify-center content-center">
+          <h1>No Movie to display</h1>
+        </section>
       )}
     </>
   );
