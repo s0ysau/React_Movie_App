@@ -3,9 +3,10 @@ import "./styles.css";
 import MovieDisplay from "./components/MovieDisplay";
 import Form from "./components/Form";
 // import Header from "./components/Header";
-import Main from "./components/Main";
+// import Main from "./components/Main";
 import Footer from "./components/Footer";
 import LandingPg from "./components/LandingPg";
+
 
 export default function App() {
   const apiKey = "cbc3f5a1";
@@ -25,11 +26,7 @@ export default function App() {
     }
   };
 
-  useEffect(() => {
-    <LandingPg />;
-  }, []);
   
-
   return (
     <div className="App">
       <Form movieSearch={getMovie}/>

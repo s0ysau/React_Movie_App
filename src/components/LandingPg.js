@@ -13,5 +13,3 @@ export default function LandingPg () {
     </section>
   )
 }
-
-//{process.env.PUBLIC_URL + 'images/cimena_green_screen.png'}
