@@ -18,7 +18,7 @@ export default function Form(props) {
           evt.preventDefault();
           props.movieSearch(searchTerm);
         }}
-        className="pl-5"
+        className="pl-5 pt-1"
       >
         <input 
         type="text" 
