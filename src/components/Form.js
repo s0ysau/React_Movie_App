@@ -25,11 +25,11 @@ export default function Form(props) {
         onChange={handleChange} 
         value={searchTerm} 
         placeholder="Search MovieApp" 
-        className=" box-border h-7 placeholder:italic placeholder:text-slate-400 bg-white border-slate-300 rounded-md py-2 pl-5 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+        className="2xl:w-[600px] xl:w-[500px] lg:w-[350px] md:w-[200px] sm:w-[100px] box-border h-7 placeholder:italic placeholder:text-slate-400 bg-white border-slate-300 rounded-md py-2 pl-5 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 "
         />
         <input 
         type="submit" 
-        value="submit" 
+        value="Submit" 
         className='bg-blue-700 text-white p-1 rounded mx-3 hover:bg-blue-500 hover:text-black'
         />
       </form>

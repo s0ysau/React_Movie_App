@@ -7,7 +7,7 @@ export default function LandingPg () {
         <img 
         src={process.env.PUBLIC_URL + 'images/cimena_green_screen.png'} 
         alt="cinema_pic"
-        className="max-h-full"
+        className="2xl:h-[1280px] 2xl:w-[3240px] flex place-self-center"
         />
       </div>
     </section>
