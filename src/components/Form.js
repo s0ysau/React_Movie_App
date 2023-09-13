@@ -1,6 +1,5 @@
 // Define a function that is our component, always make sure to declare the props parameter so you can use props in your component
 import { useState } from "react";
-import Logo from "./Logo";
 
 export default function Form(props) {
   //The component must return some JSX
@@ -11,8 +10,7 @@ export default function Form(props) {
   };
 
   return (
-    <div className="flex p-2 bg-black">
-      <Logo />
+    <div className="flex justify-center p-2 bg-black">
       <form
         onSubmit={(evt) => {
           evt.preventDefault();

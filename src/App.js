@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
+import { Routes, Route } from 'react-router-dom'
+import { useState } from "react";
 import "./styles.css";
-import MovieDisplay from "./components/MovieDisplay";
-import Form from "./components/Form";
-// import Header from "./components/Header";
-// import Main from "./components/Main";
-import Footer from "./components/Footer";
-import LandingPg from "./components/LandingPg";
+import MoviePage from './pages/MoviePage';
+import Footer from './components/Footer';
+import Logo from './components/Logo';
+import Form from './components/Form';
 
 
 export default function App() {
   const apiKey = "cbc3f5a1";
   const [movie, setMovie] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
+
 
   const getMovie = async (searchTerm) => {
     try {
@@ -26,17 +26,16 @@ export default function App() {
     }
   };
 
-  
-  return (
-    <div className="App">
-      <Form movieSearch={getMovie}/>
-      <div>{errorMessage ? `Error:${errorMessage}` : ""}</div>
-      {
-        movie ? <MovieDisplay movie={movie} /> : <LandingPg />
-      }
-      {/* // <MovieDisplay movie={movie} /> */}
-      {/* <Main movie={movie} /> */}
+    return (
+    <>
+      <section className="flex justify-center p-2 bg-black">
+        <Logo/>
+        <Form movieSearch={getMovie} />
+      </section>
+      <Routes>
+        <Route path='/' element={<MoviePage movie={movie}/>}/>
+      </Routes>
       <Footer />
-    </div>
-  );
+    </>
+  )
 }

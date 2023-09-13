@@ -1,4 +1,5 @@
-// import BreakLine from "./Breakline";
+// import { useParams } from "react-router-dom";
+import HomePage from "../pages/HomePage";
 
 // Define a function that is our component, always make sure to declare the props parameter so you can use props in your component
 export default function MovieDisplay({movie}) {
@@ -45,9 +46,7 @@ export default function MovieDisplay({movie}) {
           </div> */}
         </>
       ) : (
-        <section className="flex justify-center content-center">
-          <h1>No Movie to display</h1>
-        </section>
+        <HomePage />
       )}
     </>
   );

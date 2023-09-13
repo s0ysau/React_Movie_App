@@ -1,5 +1,5 @@
 
-export default function LandingPg () {
+export default function LandingDisplay () {
   
   return (
     <section>

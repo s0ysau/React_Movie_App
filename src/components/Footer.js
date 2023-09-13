@@ -1,5 +1,4 @@
-import LandingPg from "./LandingPg"
-
+import { Link } from "react-router-dom"
 
 export default function Footer () {
 
@@ -9,14 +8,13 @@ export default function Footer () {
         <h1>Social Media icons</h1>
       </section> */}
       <section className="flex flex-row justify-center">
-        <a href={<LandingPg/>} >Home &nbsp;</a>
+        <Link to='/'>
+          <button>Home &nbsp;</button>
+        </Link>
         <a href='https://github.com/s0ysau/React_Movie_App#readme'>About &nbsp;</a>
         <a href="https://jerricklc.herokuapp.com/">Contact &nbsp;</a>
       </section>
-      {/* <section>
-        <p>A something company</p>
-      </section> */}
-      <section>
+      <section className="flex flex-row justify-center">
         <p>© 2023 By Jerrick Lloyd C</p>
       </section>
     </div>
