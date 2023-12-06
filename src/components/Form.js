@@ -27,7 +27,7 @@ export default function Form(props) {
         />
         <input 
         type="submit" 
-        value="Submit" 
+        value="Search" 
         className='bg-blue-700 text-white p-1 rounded mx-3 hover:bg-blue-500 hover:text-black'
         />
       </form>

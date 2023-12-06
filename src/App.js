@@ -1,14 +1,18 @@
 import { Routes, Route } from 'react-router-dom'
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { StateContextProvider } from './context/stateContext';
 import "./styles.css";
+import getMovie from "./utilities/ombd-api"
 import MoviePage from './pages/MoviePage';
 import Footer from './components/Footer';
 import Logo from './components/Logo';
 import Form from './components/Form';
+import Header from './components/Header';
+import HomePage from './pages/HomePage';
 
 
 export default function App() {
-  const apiKey = "cbc3f5a1";
+  const apiKey = process.env.REACT_APP_OMDB_API_KEY
   const [movie, setMovie] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -26,16 +30,24 @@ export default function App() {
     }
   };
 
+  useEffect(() => {
+    getMovie()
+  }, [])  
+
+
     return (
-    <>
+    <StateContextProvider>
       <section className="flex justify-center p-2 bg-black">
         <Logo/>
         <Form movieSearch={getMovie} />
+        {/* <Header /> */}
       </section>
       <Routes>
-        <Route path='/' element={<MoviePage movie={movie}/>}/>
+        {/* <Route path='/' element={<HomePage/>} /> */}
+        {/* <Route path='/:params' element={<MoviePage movie={movie}/>}/> */}
+        <Route path='/' element={<MoviePage movie={movie}/>} />
       </Routes>
       <Footer />
-    </>
+    </StateContextProvider>
   )
 }

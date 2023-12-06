@@ -3,7 +3,7 @@ import LandingDisplay from '../components/LandingDisplay'
 
 
 export default function HomePage () {
-    // const apiKey = "cbc3f5a1";
+
     // const [movie, setMovie] = useState(null);
     // const [errorMessage, setErrorMessage] = useState("");
   
