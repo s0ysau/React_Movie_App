@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 import Logo from './components/Logo';
 import Form from './components/Form';
 import Header from './components/Header';
-import HomePage from './pages/HomePage';
+import LandingDisplay from './pages/LandingDisplay';
 
 
 export default function App() {
@@ -43,9 +43,9 @@ export default function App() {
         {/* <Header /> */}
       </section>
       <Routes>
-        {/* <Route path='/' element={<HomePage/>} /> */}
-        {/* <Route path='/:params' element={<MoviePage movie={movie}/>}/> */}
-        <Route path='/' element={<MoviePage movie={movie}/>} />
+        <Route path='/' element={<LandingDisplay />} />
+        <Route path='/:params' element={<MoviePage movie={movie}/>}/>
+        {/* <Route path='/' element={<MoviePage movie={movie}/>} /> */}
       </Routes>
       <Footer />
     </StateContextProvider>

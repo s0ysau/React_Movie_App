@@ -1,5 +1,6 @@
 // Define a function that is our component, always make sure to declare the props parameter so you can use props in your component
 import { useState } from "react";
+import GetMovie from "../utilities/ombd-api";
 
 export default function Form(props) {
   //The component must return some JSX
@@ -14,7 +15,7 @@ export default function Form(props) {
       <form
         onSubmit={(evt) => {
           evt.preventDefault();
-          props.movieSearch(searchTerm);
+          GetMovie(evt.target.value);
         }}
         className="pl-5 pt-1"
       >

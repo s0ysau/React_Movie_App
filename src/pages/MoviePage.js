@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import HomePage from "./HomePage";
+import LandingDisplay from "./LandingDisplay";
 
 // Define a function that is our component, always make sure to declare the props parameter so you can use props in your component
 export default function MoviePage({movie}) {
@@ -48,7 +48,7 @@ export default function MoviePage({movie}) {
           </div> */}
         </>
       ) : (
-        <HomePage />
+        <LandingDisplay />
       )}
     </>
   );

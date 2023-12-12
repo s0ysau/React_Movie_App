@@ -4,10 +4,13 @@ export const StateContext = createContext()
 
 export const StateContextProvider = (props) => {
   const [movie, setMovie] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const contextValue = {
     movie,
-    setMovie
+    setMovie,
+    errorMessage,
+    setErrorMessage,
   }
 
 
