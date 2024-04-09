@@ -15,7 +15,7 @@ export default function Footer () {
         <a href="https://jerricklc.herokuapp.com/">Contact &nbsp;</a>
       </section>
       <section className="flex flex-row justify-center">
-        <p>© 2023 By Jerrick Lloyd C</p>
+        <p>© 2024 By Jerrick Lloyd C</p>
       </section>
     </div>
   )

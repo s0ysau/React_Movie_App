@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import { StateContextProvider } from './context/stateContext';
 import "./styles.css";
-import getMovie from "./utilities/ombd-api"
 import MoviePage from './pages/MoviePage';
 import Footer from './components/Footer';
 import Logo from './components/Logo';
@@ -30,24 +29,40 @@ export default function App() {
     }
   };
 
-  useEffect(() => {
-    getMovie()
-  }, [])  
+  // useEffect(() => {
+  //   getMovie()
+  // }, [])  
+
+  console.log(movie)
 
 
-    return (
-    <StateContextProvider>
+  return (
+    // <StateContextProvider>
+    //   <section className="flex justify-center p-2 bg-black">
+    //     <Logo/>
+    //     <Form movieSearch={getMovie} />
+    //     {/* <Header /> */}
+    //   </section>
+    //   <Routes>
+    //     <Route path='/' element={<LandingDisplay />} />
+    //     <Route path='/:params' element={<MoviePage movie={movie}/>}/>
+    //     {/* <Route path='/' element={<MoviePage movie={movie}/>} /> */}
+    //   </Routes>
+    //   <Footer />
+    // </StateContextProvider>
+    <div className="App">
       <section className="flex justify-center p-2 bg-black">
-        <Logo/>
+        <Logo />
         <Form movieSearch={getMovie} />
         {/* <Header /> */}
       </section>
-      <Routes>
-        <Route path='/' element={<LandingDisplay />} />
-        <Route path='/:params' element={<MoviePage movie={movie}/>}/>
-        {/* <Route path='/' element={<MoviePage movie={movie}/>} /> */}
-      </Routes>
+      <div>{errorMessage ? `Error:${errorMessage}` : ""}</div>
+      {
+        movie ? <MoviePage movie={movie} /> : <LandingDisplay />
+      }
+      {/* // <MovieDisplay movie={movie} /> */}
+      {/* <Main movie={movie} /> */}
       <Footer />
-    </StateContextProvider>
+    </div>
   )
 }
