@@ -8,7 +8,7 @@
 //   const options = {
 // 	method: 'GET',
 // 	headers: {
-		
+
 // 		'X-RapidAPI-Host': 'actor-movie-api1.p.rapidapi.com'
 // 	}
 //   }
@@ -23,7 +23,7 @@
 
 //   return (
 //     <React.Fragment>
-      
+
 //     </React.Fragment>
 //   )
 // }
