@@ -1,5 +1,8 @@
+import React, {useContext} from 'react'
+import { StateContext } from '../context/stateContext'
 
 export default function LandingDisplay () {
+  // const {movie} = useContext(StateContext)
   
   return (
     <section>
