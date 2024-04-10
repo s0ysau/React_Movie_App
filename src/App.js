@@ -1,42 +1,26 @@
-import { useState, useEffect } from "react";
-import "./styles.css";
-import MovieDisplay from "./components/MovieDisplay";
-import Form from "./components/Form";
-// import Header from "./components/Header";
-// import Main from "./components/Main";
-import Footer from "./components/Footer";
-import LandingPg from "./components/LandingPg";
+import { useState } from 'react'
+import './styles.css'
+import MoviePage from './pages/MoviePage'
+import Footer from './components/Footer'
+import Logo from './components/Logo'
+import SearchBar from './components/SearchBar'
+import LandingDisplay from './pages/LandingDisplay'
 
+export default function App () {
+  const [movie, setMovie] = useState(null)
+  const [errorMessage, setErrorMessage] = useState('')
 
-export default function App() {
-  const apiKey = "cbc3f5a1";
-  const [movie, setMovie] = useState(null);
-  const [errorMessage, setErrorMessage] = useState("");
-
-  const getMovie = async (searchTerm) => {
-    try {
-      const response = await fetch(
-        `https://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
-      );
-      const data = await response.json();
-      setMovie(data);
-    } catch (err) {
-      console.error(err);
-      setErrorMessage(err.message);
-    }
-  };
-
-  
   return (
-    <div className="App">
-      <Form movieSearch={getMovie}/>
-      <div>{errorMessage ? `Error:${errorMessage}` : ""}</div>
+    <div className='App'>
+      <section className='flex justify-center p-2 bg-black'>
+        <Logo setMovie={setMovie} />
+        <SearchBar setMovie={setMovie} />
+      </section>
+      <div>{errorMessage ? `Error:${errorMessage}` : ''}</div>
       {
-        movie ? <MovieDisplay movie={movie} /> : <LandingPg />
+        movie != null ? <MoviePage movie={movie} /> : <LandingDisplay />
       }
-      {/* // <MovieDisplay movie={movie} /> */}
-      {/* <Main movie={movie} /> */}
       <Footer />
     </div>
-  );
+  )
 }

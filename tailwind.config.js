@@ -2,11 +2,10 @@
 module.exports = {
   content: [
     './src/**/*.js',
-    "./public/index.html"
+    './public/index.html'
   ],
   theme: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  plugins: []
 }
-
