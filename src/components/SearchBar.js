@@ -2,27 +2,27 @@
 import { useState, useContext } from "react";
 import { StateContext } from "../context/stateContext";
 
-export default function Form(props) {
+export default function SearchBar({setMovie}) {
   //The component must return some JSX
+  const apiKey = process.env.REACT_APP_OMDB_API_KEY;
   const [searchTerm, setSearchTerm] = useState("");
+  
   // const { movie, setMovie, errorMessage, setErrorMessage } = useContext(StateContext);
 
-  // const fetchMovie = async (searchTerm) => {
-  //   try {
-  //     const apiKey = process.env.REACT_APP_OMDB_API_KEY;
-  //     const response = await fetch(
-  //       `https://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
-  //     );
-  //     const data = await response.json();
-  //     setMovie(data);
-  //   } catch (err) {
-  //     console.error(err);
-  //     setErrorMessage(err.message);
-  //   }
-  // }
-
+  const getMovie = async (searchTerm) => {
+    try {
+      const response = await fetch(
+        `https://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
+      );
+      const data = await response.json();
+      setMovie(data);
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
   const handleChange = (evt) => {
     setSearchTerm(evt.target.value);
+    
   };
 
   return (
@@ -30,7 +30,7 @@ export default function Form(props) {
       <form
         onSubmit={(evt) => {
           evt.preventDefault();
-          props.movieSearch(searchTerm);
+          getMovie(searchTerm)
         }}
         className="pl-5 pt-1"
       >
